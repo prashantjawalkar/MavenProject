@@ -4,6 +4,7 @@ import javax.sql.rowset.WebRowSet;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Demo {
@@ -23,6 +24,9 @@ public class Demo {
 		WebDriver driver = new FirefoxDriver();
 		driver.get("http://www.facebook.com");
 		System.out.println("Title ====>"+driver.getTitle());
+		Assert.assertTrue(driver.getTitle().contains("Facebook"));
+		System.out.println("Title has Facebook in it..");
 		driver.quit();
+		
 	}
 }
